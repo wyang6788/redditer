@@ -10,23 +10,24 @@
 #   http://dev.mysql.com/doc/refman/5.0/en/old-client.html
 #
 
-#default: &default
-#  adapter: mysql2
-#  encoding: utf8
-#  host: aa14gkw2917t747.c0ia22vlmnjx.us-west-2.rds.amazonaws.com
-#  username: williamyang
-#  password: password
-#  socket: /var/run/mysqld/mysqld.sock
-#  database: ebdb
-
 default: &default
   adapter: mysql2
   encoding: utf8
-  database: <%= ENV['RDS_RB_NAME'] %>
-  username: <%= ENV['RDS_USERNAME'] %>
-  password: <%= ENV['RDS_PASSWORD'] %>
-  host: <%= ENV['RDS_HOSTNAME'] %>
-  port: <%= ENV['RDS_PORT'] %>
+  host: aa14gkw2917t747.c0ia22vlmnjx.us-west-2.rds.amazonaws.com
+  username: williamyang
+  password: password
+# socket: /var/run/mysqld/mysqld.sock
+  database: ebdb
+  port: 3306
+
+#default: &default
+#  adapter: mysql2
+#  encoding: utf8
+#  database: <%= ENV['RDS_RB_NAME'] %>
+#  username: <%= ENV['RDS_USERNAME'] %>
+#  password: <%= ENV['RDS_PASSWORD'] %>
+#  host: <%= ENV['RDS_HOSTNAME'] %>
+#  port: <%= ENV['RDS_PORT'] %>
 
 development:
   <<: *default
