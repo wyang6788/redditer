@@ -1,0 +1,166 @@
+body{
+    overflow: hidden;
+}
+
+.menu{
+    background-color: #000000;
+    display: inline-block;
+    height: 100vh;
+    width: 200px;
+    list-style-type: none;
+    font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+    font-weight: bold;
+    font-size: 1.5em;
+    margin-right: 0px;
+    position: relative;
+    left: -200px;
+}
+
+#profile-image{
+    margin-left: 15px;
+    border-radius: 100%;
+}
+
+li{
+    padding-top: 20px;
+}
+
+a:hover{
+    text-decoration: none;
+    color: #d35400;
+}
+
+.icon-close{
+    padding-left: 150px;
+    padding-top: 17px;
+}
+
+.menu-list{
+    list-style-type: none;
+    padding-left: 10px;
+}
+
+.menu-list li{
+    text-align: center;
+}
+
+.main{
+    text-align: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: gray;
+    display: inline-block;
+    position: absolute;
+    background-image: url(../assets/welcome.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    left: 0px;
+}
+
+#menu-button{
+    float: left;
+    border: none;
+    margin-top: 10px;
+    height: 65px;
+}
+
+#tfd-logo{
+	display: inline-block;
+	position: absolute;
+	right: 0px;
+}
+
+#message{
+    text-align: center;
+    vertical-align: center;
+    position: relative;
+    top: 30vh;
+    right: 75px;
+    transform: translateY(-50%);
+    font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 500;
+    font-size: 3em;
+    color: #FFFFFF;
+    min-width: 1px;
+    min-height: 3em;
+}
+
+div.footer {
+		position: absolute;
+		bottom: 0;
+		left: 60px;
+}
+
+/*.footer > a{
+		position: relative;
+		left: 50px;
+}*/
+
+.main form{
+		display: inline;
+    margin-right: 20px;
+    background-color: #990000;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 2em;
+    border: none;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+.main form input{
+		background-color: #990000;
+		border: none;
+}
+
+.main button:hover{
+    background-color: #CC0000;
+}
+
+.user-buttons{
+    display: table;
+    margin: 0 auto;
+    position: relative;
+    top: 37vh;
+    right: 75px;
+}
+
+.typed-cursor{
+    display: inline;
+    text-align: center;
+    vertical-align: center;
+    position: relative;
+    right: 75px;
+    top: 30vh;
+    transform: translateY(-50%);
+    font-family: 'Avant Garde', Avantgarde, 'Century Gothic', CenturyGothic, AppleGothic, sans-serif;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 500;
+    font-size: 3em;
+    color: #FFFFFF;
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}

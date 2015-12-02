@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="assets/utils.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/site.css"/>
+    <script src="assets/typed.js"></script>
+    <script>
+      $(function(){
+        $("#message").typed({
+            strings: ["We are a social network focused on bringing gamers together. We make it easier for individuals to find others to game with.", "Created by Will Yang, Edmound Wu, Vince Xie, and Jan Catarata"],
+            typeSpeed: 0
+          });
+      });
+    </script>
+  </head>
+
+  <style>
+    .main{
+      background-image: url(assets/4bominW.jpg);
+    }
+  </style>
+
+  <body>
+
+    <div class="menu">
+      
+      <!-- Menu icon -->
+      <div class="icon-close">
+        <img src="assets/close-menu-light.png" height="40px" onmouseover="this.src='assets/close-menu-light.png'" onmouseout="this.src='assets/close-menu-dark.png'" onclick="closeMenu();" >
+      </div>
+
+      <!-- Menu -->
+      <ul class="menu-list">
+        <img id="profile-image" src="assets/Ramiel.jpg" width="160px"/>
+        <div><li><a href="dank">DANK DEFENSE</a></li></div>
+        <li><a href="#">Profile</a></li>
+        <li><a href="about">About</a></li>
+				<% if current_user %>
+					<div class="footer"><li><%= current_user.first_name %>
+					<%= current_user.last_name %> </li>	
+					<li><%= link_to "Log out", logout_path, :method => :delete %></li></div>
+				<% end %>
+      </ul>
+    </div>
+	
+	<!-- Main body -->
+    <div class="main">
+       <img id="menu-button" src="assets/menu-logo-white.png" onmouseover="this.src='assets/menu-logo-orange.png'" onmouseout="this.src='assets/menu-logo-white.png'" onclick="openMenu();" />
+	     <a href="index"><img id="tfd-logo" src="assets/tfd-white.png" height="150px" onmouseover="this.src='assets/tfd-orange.png'" onmouseout="this.src='assets/tfd-white.png'"/></a>
+	     <span id="message"></span>
+    </div>
+  </body>
+</html>
