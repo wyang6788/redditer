@@ -1,4 +1,6 @@
 branch-defaults:
+  chat:
+    environment: redditer-env
   master:
     environment: redditer-env
     group_suffix: null
