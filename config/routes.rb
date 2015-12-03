@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'index' => 'home#index' 
+=begin
+	get 'index' => 'home#index' 
 	get 'about' => 'home#about'
 
 	get 'profile' => 'profile#index'
@@ -13,11 +14,29 @@ Rails.application.routes.draw do
 
 	get 'dank' => 'games#dank'
 
+    get 'chat' => 'chat#index'
+
+    root 'home#index'
+=end
+    devise_for :users
+    
+    authenticated :user do
+      root 'users#index'
+    end
+
+    unauthenticated :user do
+      devise_scope :user do
+        get "/" => "devise/sessions#new"
+      end
+    end
+
+    resources :conversations do
+      resources :messages
+    end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'home#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

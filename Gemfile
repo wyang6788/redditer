@@ -28,6 +28,13 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'rename'
 
+gem "redd", "~> 0.7.0"
+
+gem 'devise'
+
+gem 'private_pub'
+gem 'thin'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

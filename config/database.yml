@@ -13,11 +13,17 @@
 default: &default
   adapter: mysql2
   encoding: utf8
-  host: aa14gkw2917t747.c0ia22vlmnjx.us-west-2.rds.amazonaws.com
-  username: williamyang
+  username: root
   password: password
-  database: ebdb
-  port: 3306
+
+#default: &default
+#  adapter: mysql2
+#  encoding: utf8
+#  host: aa14gkw2917t747.c0ia22vlmnjx.us-west-2.rds.amazonaws.com
+#  username: williamyang
+#  password: password
+#  database: ebdb
+#  port: 3306
 
 #default: &default
 #  adapter: mysql2
@@ -29,15 +35,12 @@ default: &default
 #  port: <%= ENV['RDS_PORT'] %>
 
 development:
-  <<: *default
-#  adapter: mysql2
-#  encoding: utf8
-#  database: <%= ENV['RDS_RB_NAME'] %>
-#  username: <%= ENV['RDS_USERNAME'] %>
-#  password: <%= ENV['RDS_PASSWORD'] %>
-#  host: <%= ENV['RDS_HOSTNAME'] %>
-#  port: <%= ENV['RDS_PORT'] %>
-#  database: TFD_development
+#  <<: *default
+  adapter: mysql2
+  encoding: utf8
+  username: root
+  password: password
+  database: TFD_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
