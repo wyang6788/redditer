@@ -24,8 +24,8 @@ default: &default
   adapter: mysql2
   encoding: utf8
   username: root
-  password: password
-  database: tfd_development
+  password: wadsworth30
+  database: redditer
   port: 3306
 
 #default: &default

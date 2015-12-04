@@ -1,8 +1,3 @@
-<style>
-	a.navbar-brand {
-		color: black;
-	}
-</style>
 <!-- Navigation -->
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
@@ -14,25 +9,25 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <%= link_to "Redditer", root_path, class: "navbar-brand" %>
+      <%= link_to image_tag("redditer-logov2.png", width: '20%', style: 'float: up'), root_path, class: "navbar-brand" %>
     </div>
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav pull-right">
         <% if user_signed_in? %>
             <li>
-              <%= link_to "Hi, #{current_user.name}" %>
-            </li>
-            <li>
               <%= link_to "Profile", profile_path %>
             </li>
             <li>
-              <%= link_to "Subreddits", "subreddits" %>
+              <%= link_to "About", about_path %>
             </li>
             <li>
               <%= link_to "Logout", destroy_user_session_path, method: :delete	  %>
             </li>
         <% else %>
+            <li>
+              <%= link_to "About", about_path %>
+            </li>
             <li>
               <%= link_to "Sign in", new_user_session_path %>
             </li>
