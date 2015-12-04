@@ -3,7 +3,7 @@
 <p><b>Name: </b><%= current_user.name %></p>
 <p><b>Email address: </b><%= current_user.email %></p>
 <p><b>Subscribed subreddits: </b><%= link_to 'Click to Add New Subreddit', "subreddits/new" %></p>
-<ul>
+<ul style="list-style-type: none">
     <li><%= render @subreddits %></li>
 </ul>
 
