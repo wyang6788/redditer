@@ -17,15 +17,21 @@
           </tr>
           </thead>
           <tbody>
-          <% @users.each_with_index do |user| %>
+          <% @users.each do |pair| %>
+              <% if !pair.nil? %>
               <tr>
-                <td><%= user.name %></td>
-                <td> 1 <td>
                 <td>
-                  <%= link_to "Send Message", "#", class: "btn btn-success btn-xs start-conversation",
-                              "data-sid" => current_user.id, "data-rip" => user.id %>
+                    <%= pair[0].name %> 
+                </td>
+                <td> 
+                    <%= pair[1].to_s() + "%" %>
+                </td>
+                <td>
+                    <%= link_to "Send Message", "#", class: "btn btn-success btn-xs start-conversation",
+                              "data-sid" => current_user.id, "data-rip" => pair[0].id %>
                 </td>
               </tr>
+              <% end %>
           <% end %>
 
           </tbody>
