@@ -1,0 +1,16 @@
+
+<script>
+function authenticate() {
+    var message = '<%= @print %>'; 
+    var code = prompt(message, "");
+    var json = { 'code' : code }
+
+    $.ajax({
+      type: "POST",
+      url: "redditapi/authorize",
+      data: json
+    });
+//    alert(code);
+}
+authenticate();
+</script>

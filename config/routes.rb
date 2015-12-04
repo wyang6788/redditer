@@ -35,6 +35,15 @@ Rails.application.routes.draw do
     end
 
     get 'profile' => 'profile#index'
+
+    get 'redditapi' => 'redditapi#import'
+
+    get 'subreddits' => 'subreddits#index'
+    get 'subreddits/new' => 'subreddits#new'
+    post 'subreddits' => 'subreddits#create'
+
+    post 'redditapi/authorize' => 'redditapi#authorize'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

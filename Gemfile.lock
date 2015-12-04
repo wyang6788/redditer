@@ -111,6 +111,7 @@ GEM
     mysql2 (0.3.20)
     nokogiri (1.6.7)
       mini_portile2 (~> 2.0.0.rc2)
+    oj (2.13.1)
     orm_adapter (0.5.0)
     private_pub (1.0.3)
       faye
@@ -205,6 +206,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   mysql2 (~> 0.3.18)
+  oj
   private_pub
   rails (= 4.2.4)
   redd (~> 0.7.0)

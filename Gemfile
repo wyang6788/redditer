@@ -29,6 +29,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'rename'
 
 gem "redd", "~> 0.7.0"
+gem "oj", platforms: :ruby
 
 gem 'devise'
 
