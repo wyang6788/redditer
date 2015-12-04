@@ -1,3 +1,5 @@
-<p><%= current_user.name %></p>
+<p>name : <%= current_user.name %></p>
 <p><%= current_user.email %></p>
+<p><%= link_to 'New Subreddit', "subreddits/new" %></p>
+<%= render @subreddits %>
 

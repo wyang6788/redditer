@@ -22,12 +22,15 @@
               <%= link_to "Profile", profile_path %>
             </li>
             <li>
-              <%= link_to "Subreddits", "subreddits" %>
+              <%= link_to "About", about_path %>
             </li>
             <li>
               <%= link_to "Logout", destroy_user_session_path, method: :delete	  %>
             </li>
         <% else %>
+            <li>
+              <%= link_to "About", about_path %>
+            </li>
             <li>
               <%= link_to "Sign in", new_user_session_path %>
             </li>

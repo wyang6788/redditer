@@ -25,7 +25,7 @@ default: &default
   encoding: utf8
   username: root
   password: password
-  database: tfd_development
+  database: TFD_development
   port: 3306
 
 #default: &default

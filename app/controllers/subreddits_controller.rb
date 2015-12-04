@@ -1,9 +1,4 @@
 class SubredditsController < ApplicationController
-  def index
-    @user = current_user
-    @subreddits = @user.subreddits
-  end
-
   def new
     @subreddit = Subreddit.new
   end
@@ -13,7 +8,7 @@ class SubredditsController < ApplicationController
     @subreddit = Subreddit.new(subreddit_params)
     if @subreddit.save
       @user.subreddits.push(@subreddit)
-      redirect_to '/subreddits'
+      redirect_to '/profile'
     else
       render 'new'
     end
