@@ -29,3 +29,7 @@ h1, h2, h3 {
 	background-color: #cee3f8;
 }
 
+.sr-only a:link {
+	color: black;
+}
+
