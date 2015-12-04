@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-    default_url_options :host => "redditer-dev.elasticbeanstalk.com"
+    default_url_options :host => "redditer.elasticbeanstalk.com"
   
     devise_for :users
     

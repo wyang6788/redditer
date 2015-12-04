@@ -25,12 +25,12 @@ class UsersController < ApplicationController
           subreddits.push(subreddit.name)          
         end
 
-        avg = (subredditsmodel.size + @subreddits.size)/2
+        max = [subredditsmodel.size, @subreddits.size].max
         intersection = subreddits & @subreddits
         if !intersection.empty?
           pair = Array.new
           pair.push(user)
-          pair.push(BigDecimal.new('1.0') * intersection.size/avg * 100)
+          pair.push(BigDecimal.new('1.0') * intersection.size/max * 100)
           @users.push(pair)
           count += 1
         end

@@ -2,12 +2,12 @@
   <!-- Not implemented on tutorial -->
   <div class="col-md-1"></div>
   <div class="col-md-5">
-    <br>
-    <br>
+    <center><h3>Potential Matches</h3></center>
+    <hr>
     <div style="height: 300px; overflow-y: auto;">
       <div class="panel panel-default">
         <!-- Default panel contents -->
-        <div class="panel-heading" style="text-align: center"><b>Potential Matches</b></div>
+        <!-- <div class="panel-heading" style="text-align: center"><b>Potential Matches</b></div> -->
         <!-- Table -->
         <table class="table">
           <thead>
@@ -24,7 +24,7 @@
                     <%= pair[0].name %> 
                 </td>
                 <td> 
-                    <%= pair[1].to_s() + "%" %>
+                    <%= pair[1].round(2).to_s() + "%" %>
                 </td>
                 <td>
                     <%= link_to "Send Message", "#", class: "btn btn-success btn-xs start-conversation",
@@ -40,17 +40,17 @@
 
     </div>
   </div>
-  <div class="col-md-2"></div>
-  <div class="col-md-4">
+  <div class="col-md-1"></div>
+  <div class="col-md-5">
 	<center>	
-	<h3><i><b>Your Conversations</b></i></h3>
+	<h3>Your Conversations</h3>
 	<hr>
 	<div style="height: 400px; overflow-y: auto;">
       	<% if @conversations.any? %>
           <ul class="media-list">
             <% @conversations.each do |conversation| %>
                 <li class="media">
-                  <%= image_tag("http://i.imgur.com/NPo9yel.png") %>
+                  <%= image_tag("IHLNO.jpg", width: '50') %>
                   <div class="media-body">
                     <%= link_to "", conversation_path(conversation), class: "conversation", "data-cid" => conversation.id %>
                         <h4 class="media-heading"><%= conversation_interlocutor(conversation).name %></h4>

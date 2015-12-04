@@ -17,10 +17,12 @@
 
 body {
 	background-color: #eff7ff;
+	background-image: url("blurred-background.jpg");
 	color: #336699;
+	font-family: 'Montserrat';
 }
 
-h1, h2 {
+h1, h2, h3 {
 	color: #ff4500;
 	font-weight: bold;
 }
@@ -30,6 +32,8 @@ h1, h2 {
 	border-color: #cccccc;
 }
 
-.navbar-toggle {
-	border-color: #cccccc;
+tr, th, td {
+	border: none;
+	padding: 0;
+	border-collapse: collapse;
 }
