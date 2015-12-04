@@ -22,6 +22,9 @@
               <%= link_to "Profile", profile_path %>
             </li>
             <li>
+              <%= link_to "Subreddits", "subreddits" %>
+            </li>
+            <li>
               <%= link_to "Logout", destroy_user_session_path, method: :delete	  %>
             </li>
         <% else %>

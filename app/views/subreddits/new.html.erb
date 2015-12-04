@@ -1,0 +1,15 @@
+<h1>Put in a subreddit </h1>
+<%= form_for :subreddit, url: subreddits_path do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+
+  <p>
+    <%= button_to "Back", 'subreddits', :class => 'button', :method => :get %>
+  </p>
+<% end %>
