@@ -14,3 +14,13 @@
  *= require bootstrap
  *= require_self
  */
+
+body {
+	background-color: #eff7ff;
+	color: #336699;
+}
+
+h1, h2, h3 {
+	color: #336699;
+	font-weight: bold;
+}

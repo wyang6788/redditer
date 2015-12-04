@@ -12,8 +12,8 @@
 }
 
 .chatboxhead {
-    background: #666;
-    color: white;
+    background: #cee3f8;
+    color: #336699;
     padding: 0.5rem;
     overflow: hidden;
 
@@ -42,7 +42,7 @@
     border-left: 1px solid #cccccc;
     border-right: 1px solid #cccccc;
     border-bottom: 1px solid #eeeeee;
-    background: #e5e5e5;
+    background: #eff7ff;
     line-height: 1.3em;
     list-style: none;
 }
@@ -103,7 +103,7 @@
 }
 
 .chatboxmessagecontent {
-    background: white;
+    background: #CEE3F8;
     padding: 10px;
     border-radius: 2px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
@@ -124,7 +124,7 @@
 
 .chatboxmessagecontent time {
     font-size: 9px;
-    color: #ccc;
+    color: black;
 }
 
 .chatboxinput {
@@ -156,7 +156,7 @@
 
 .chatboxinfo {
     margin-left: -1em;
-    color: #666666;
+    color: black;
 
 }
 
@@ -166,7 +166,7 @@
 
 .chatboxoptions a {
     text-decoration: none;
-    color: white;
+    color: #FF4500;;
     font-weight: bold;
 }
 
