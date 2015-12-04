@@ -13,7 +13,7 @@
 default: &default
   adapter: mysql2
   encoding: utf8
-  host: aa1tllviv2p5ip6.c0ia22vlmnjx.us-west-2.rds.amazonaws.com
+  host: aal9f0q0aa0chq.c0ia22vlmnjx.us-west-2.rds.amazonaws.com
   username: williamyang
   password: password
   database: ebdb
