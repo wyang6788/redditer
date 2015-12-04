@@ -16,9 +16,6 @@
       <ul class="nav navbar-nav pull-right">
         <% if user_signed_in? %>
             <li>
-              <%= link_to "Hi, #{current_user.name}" %>
-            </li>
-            <li>
               <%= link_to "Profile", profile_path %>
             </li>
             <li>
