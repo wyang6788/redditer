@@ -10,23 +10,22 @@
 #   http://dev.mysql.com/doc/refman/5.0/en/old-client.html
 #
 
-#default: &default
-#  adapter: mysql2
-#  encoding: utf8
-#  host: aa14gkw2917t747.c0ia22vlmnjx.us-west-2.rds.amazonaws.com
-#  username: williamyang
-#  password: password
-# socket: /var/run/mysqld/mysqld.sock
-#  database: ebdb
-#  port: 3306
-
 default: &default
   adapter: mysql2
   encoding: utf8
-  username: root
-  password: wadsworth30
-  database: redditer
+  host: aa1tllviv2p5ip6.c0ia22vlmnjx.us-west-2.rds.amazonaws.com
+  username: williamyang
+  password: password
+  database: ebdb
   port: 3306
+
+#default: &default
+#  adapter: mysql2
+#  encoding: utf8
+#  username: root
+#  password: password
+#  database: TFD_development
+#  port: 3306
 
 #default: &default
 #  adapter: mysql2
