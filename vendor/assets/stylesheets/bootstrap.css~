@@ -4598,6 +4598,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
 .navbar-inverse .navbar-brand {
   color: #ff4500;
   font-weight: bold;
+  background-image: url("../../../app/assets/images/redditer-logov2.png");
 }
 .navbar-inverse .navbar-brand:hover,
 .navbar-inverse .navbar-brand:focus {
