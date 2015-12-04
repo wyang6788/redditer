@@ -4,22 +4,21 @@
     <div style="height: 300px; overflow-y: auto;">
       <div class="panel panel-default">
         <!-- Default panel contents -->
-        <div class="panel-heading">Registered Users</div>
+        <div class="panel-heading">Potential Tomodachis</div>
 
         <!-- Table -->
         <table class="table">
           <thead>
           <tr>
-            <th>#</th>
             <th>Name</th>
-            <th></th>
+            <th>Match %</th>
           </tr>
           </thead>
           <tbody>
-          <% @users.each_with_index do |user, index| %>
+          <% @users.each_with_index do |user| %>
               <tr>
-                <td><%= index +=1 %></td>
                 <td><%= user.name %></td>
+                <td> 1 <td>
                 <td>
                   <%= link_to "Send Message", "#", class: "btn btn-success btn-xs start-conversation",
                               "data-sid" => current_user.id, "data-rip" => user.id %>
