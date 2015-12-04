@@ -20411,3 +20411,1038 @@ Processing by ConversationsController#show as HTML
   Rendered messages/_message.html.erb (4.3ms)
   Rendered conversations/show.html.erb (229.3ms)
 Completed 200 OK in 240ms (Views: 232.2ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-03 21:26:09 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (NOT (id = 1))  ORDER BY created_at DESC[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM `conversations` WHERE (conversations.sender_id =1 OR conversations.recipient_id =1)
+  [1m[36mConversation Load (0.1ms)[0m  [1mSELECT `conversations`.* FROM `conversations` WHERE (conversations.sender_id =1 OR conversations.recipient_id =1)  ORDER BY created_at DESC[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT  `messages`.* FROM `messages` WHERE `messages`.`conversation_id` = 2  ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `messages`.* FROM `messages` WHERE `messages`.`conversation_id` = 2  ORDER BY `messages`.`id` DESC LIMIT 1  [["conversation_id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mMessage Load (0.3ms)[0m  SELECT  `messages`.* FROM `messages` WHERE `messages`.`conversation_id` = 1  ORDER BY `messages`.`id` DESC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `messages`.* FROM `messages` WHERE `messages`.`conversation_id` = 1  ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["conversation_id", 1]]
+  Rendered users/index.html.erb within layouts/application (47.4ms)
+  Rendered layouts/_nav.html.erb (1.3ms)
+Completed 200 OK in 230ms (Views: 217.3ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/assets/friendships.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-03 21:26:09 -0500
+
+
+Started GET "/assets/games.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-03 21:26:09 -0500
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-03 21:26:09 -0500
+
+
+Started GET "/assets/profile.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-03 21:26:09 -0500
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-03 21:26:09 -0500
+
+
+Started GET "/assets/site.self-8bcaeb2e383fd5423b2870c74c71d62a35c6e4100047980a41e7d26df947673d.css?body=1" for 127.0.0.1 at 2015-12-03 21:26:09 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-12-03 21:26:09 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-12-03 21:26:09 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-12-03 21:26:09 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-03 21:29:14 -0500
+  [1m[35mUser Load (0.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Processing by UsersController#index as HTML
+  Rendered users/index.html.erb within layouts/application (31.9ms)
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `start_with?' for nil:NilClass):
+    1: <%= favicon_link_tag '../../assets/images/favicon.ico' %>
+    2: <div class="row">
+    3:   <!-- Not implemented on tutorial -->
+    4:   <div class="col-md-4">
+  app/views/users/index.html.erb:1:in `_app_views_users_index_html_erb__4093491913938742403_70159382296300'
+
+
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.7ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.3ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (78.0ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (15.6ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (35.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-03 21:30:36 -0500
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE (NOT (id = 1))  ORDER BY created_at DESC
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `conversations` WHERE (conversations.sender_id =1 OR conversations.recipient_id =1)[0m
+  [1m[35mConversation Load (0.1ms)[0m  SELECT `conversations`.* FROM `conversations` WHERE (conversations.sender_id =1 OR conversations.recipient_id =1)  ORDER BY created_at DESC
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+  [1m[35mMessage Load (0.2ms)[0m  SELECT  `messages`.* FROM `messages` WHERE `messages`.`conversation_id` = 2  ORDER BY `messages`.`id` DESC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `messages`.* FROM `messages` WHERE `messages`.`conversation_id` = 2  ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["conversation_id", 2]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT  `messages`.* FROM `messages` WHERE `messages`.`conversation_id` = 1  ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `messages`.* FROM `messages` WHERE `messages`.`conversation_id` = 1  ORDER BY `messages`.`id` DESC LIMIT 1  [["conversation_id", 1]]
+  Rendered users/index.html.erb within layouts/application (9.3ms)
+  Rendered layouts/_nav.html.erb (0.3ms)
+Completed 200 OK in 74ms (Views: 72.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/chat.self-b8fe4cc1ac78b9e912c00561c9b41f2a9355511c103b8d71088bf63da0e53332.css?body=1" for 127.0.0.1 at 2015-12-03 21:30:36 -0500
+
+
+Started GET "/assets/conversations.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-03 21:30:36 -0500
+
+
+Started GET "/assets/messages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-03 21:30:36 -0500
+
+
+Started GET "/assets/bootstrap.self-598365399e6ae8f5a456a189663bac8ef9b8996ace38626328403f280fd63400.css?body=1" for 127.0.0.1 at 2015-12-03 21:30:36 -0500
+
+
+Started GET "/assets/application.self-859c7279f44f73547b7c91e452f55ad7ae48b3acea26b6f47c0452ef736e3e59.css?body=1" for 127.0.0.1 at 2015-12-03 21:30:36 -0500
+
+
+Started GET "/assets/bootstrap.min.self-d475868eedd65d9ab19f96e8574a2c8ce91ba7d64b8bbfa47cd55591a956ed67.js?body=1" for 127.0.0.1 at 2015-12-03 21:30:36 -0500
+
+
+Started GET "/assets/private_pub.self-b110feb9d6b39a3b0dc59510984a4ff9ad14a15e427afbd7474c4531dbb660a6.js?body=1" for 127.0.0.1 at 2015-12-03 21:30:36 -0500
+
+
+Started GET "/assets/chat.self-08877a41716a0d25591ad867be1bdf9b5ccb29636c7286436ec1fcbae51ba483.js?body=1" for 127.0.0.1 at 2015-12-03 21:30:36 -0500
+
+
+Started GET "/assets/user/users.self-ff71eda3360ca2ed043e12163273a7b733ca44644610470d287c39db69a4c719.js?body=1" for 127.0.0.1 at 2015-12-03 21:30:36 -0500
+
+
+Started GET "/assets/application.self-794e63f8d3c269f2318eb4c0ef9caffaf1b0a47de8a46f1b2291ae9e9a431b67.js?body=1" for 127.0.0.1 at 2015-12-03 21:30:36 -0500
+
+
+Started GET "/assets/friendships.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-03 21:30:36 -0500
+
+
+Started GET "/assets/games.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-03 21:30:36 -0500
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-03 21:30:36 -0500
+
+
+Started GET "/assets/profile.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-03 21:30:36 -0500
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-03 21:30:36 -0500
+
+
+Started GET "/assets/site.self-8bcaeb2e383fd5423b2870c74c71d62a35c6e4100047980a41e7d26df947673d.css?body=1" for 127.0.0.1 at 2015-12-03 21:30:36 -0500
+
+
+Started GET "/assets/users.self-c07fc51bb32b3ac63bd5c93b44920d46f42bd91b93b4c9d4343299d589e06616.css?body=1" for 127.0.0.1 at 2015-12-03 21:30:36 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-12-03 21:30:36 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-12-03 21:30:36 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-12-03 21:30:36 -0500
+
+
+Started GET "/assets/images/favicon.ico" for 127.0.0.1 at 2015-12-03 21:30:36 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/images/favicon.ico"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  thin (1.6.4) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.4) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.4) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.4) lib/thin/connection.rb:53:in `process'
+  thin (1.6.4) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.8) lib/eventmachine.rb:193:in `run_machine'
+  eventmachine (1.0.8) lib/eventmachine.rb:193:in `run'
+  thin (1.6.4) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.4) lib/thin/server.rb:162:in `start'
+  rack (1.6.4) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.4) lib/rack/server.rb:286:in `start'
+  railties (4.2.4) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.4) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:9:in `require'
+  bin/rails:9:in `<top (required)>'
+  spring (1.5.0) lib/spring/client/rails.rb:28:in `load'
+  spring (1.5.0) lib/spring/client/rails.rb:28:in `call'
+  spring (1.5.0) lib/spring/client/command.rb:7:in `call'
+  spring (1.5.0) lib/spring/client.rb:28:in `run'
+  spring (1.5.0) bin/spring:49:in `<top (required)>'
+  spring (1.5.0) lib/spring/binstub.rb:11:in `load'
+  spring (1.5.0) lib/spring/binstub.rb:11:in `<top (required)>'
+  /home/edmond/.rbenv/versions/2.2.3/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+  /home/edmond/.rbenv/versions/2.2.3/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<main>'
+
+
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.8ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (26.0ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (76.1ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (11.5ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (23.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-03 21:30:41 -0500
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE (NOT (id = 1))  ORDER BY created_at DESC
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `conversations` WHERE (conversations.sender_id =1 OR conversations.recipient_id =1)[0m
+  [1m[35mConversation Load (0.3ms)[0m  SELECT `conversations`.* FROM `conversations` WHERE (conversations.sender_id =1 OR conversations.recipient_id =1)  ORDER BY created_at DESC
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+  [1m[35mMessage Load (0.2ms)[0m  SELECT  `messages`.* FROM `messages` WHERE `messages`.`conversation_id` = 2  ORDER BY `messages`.`id` DESC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `messages`.* FROM `messages` WHERE `messages`.`conversation_id` = 2  ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["conversation_id", 2]]
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT  `messages`.* FROM `messages` WHERE `messages`.`conversation_id` = 1  ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `messages`.* FROM `messages` WHERE `messages`.`conversation_id` = 1  ORDER BY `messages`.`id` DESC LIMIT 1  [["conversation_id", 1]]
+  Rendered users/index.html.erb within layouts/application (7.0ms)
+  Rendered layouts/_nav.html.erb (0.8ms)
+Completed 200 OK in 73ms (Views: 70.5ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/conversations" for 127.0.0.1 at 2015-12-03 21:30:45 -0500
+Processing by ConversationsController#create as */*
+  Parameters: {"sender_id"=>"1", "recipient_id"=>"3"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mConversation Load (0.3ms)[0m  SELECT `conversations`.* FROM `conversations` WHERE ((conversations.sender_id = '1' AND conversations.recipient_id ='3') OR (conversations.sender_id = '3' AND conversations.recipient_id ='1'))
+  [1m[36mConversation Load (0.2ms)[0m  [1mSELECT  `conversations`.* FROM `conversations` WHERE ((conversations.sender_id = '1' AND conversations.recipient_id ='3') OR (conversations.sender_id = '3' AND conversations.recipient_id ='1'))  ORDER BY `conversations`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/conversations/2" for 127.0.0.1 at 2015-12-03 21:30:45 -0500
+Processing by ConversationsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mConversation Load (0.2ms)[0m  [1mSELECT  `conversations`.* FROM `conversations` WHERE `conversations`.`id` = 2 LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  [1m[36mMessage Exists (0.1ms)[0m  [1mSELECT  1 AS one FROM `messages` WHERE `messages`.`conversation_id` = 2 LIMIT 1[0m
+  [1m[35mMessage Load (0.2ms)[0m  SELECT `messages`.* FROM `messages` WHERE `messages`.`conversation_id` = 2
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1  [["id", 1]]
+  Rendered messages/_message.html.erb (4.1ms)
+  Rendered conversations/show.html.erb (16.3ms)
+Completed 200 OK in 23ms (Views: 18.2ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2015-12-03 21:30:48 -0500
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"DiEcvJWQKg+fau/vqermt3dKC5hStP4eChVS6a+aopupGM28ppUaZgiFOMflwMw1KVz+NGjBvaK2WZGbqwj/xQ=="}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE `users` SET `remember_created_at` = NULL, `updated_at` = '2015-12-04 02:30:48' WHERE `users`.`id` = 1[0m
+  [1m[35m (116.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 191ms (ActiveRecord: 117.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-03 21:30:48 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (2.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (47.1ms)
+  Rendered layouts/_nav.html.erb (0.2ms)
+Completed 200 OK in 111ms (Views: 109.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/friendships.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-03 21:30:48 -0500
+
+
+Started GET "/assets/games.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-03 21:30:48 -0500
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-03 21:30:48 -0500
+
+
+Started GET "/assets/profile.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-03 21:30:48 -0500
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-03 21:30:48 -0500
+
+
+Started GET "/assets/site.self-8bcaeb2e383fd5423b2870c74c71d62a35c6e4100047980a41e7d26df947673d.css?body=1" for 127.0.0.1 at 2015-12-03 21:30:48 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-12-03 21:30:48 -0500
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-03 21:30:53 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_nav.html.erb (0.2ms)
+Completed 200 OK in 73ms (Views: 72.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-12-03 21:31:03 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gRa1hKeuTqRaD/RBp3e1Ny2PxUCRduuCXTDkANW0Amt0jVYzX7B++LOt6S8LPRIpr9dY+JFZclwLfoWvGEVsoQ==", "user"=>{"email"=>"edma_wu@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'edma_wu@yahoo.com'  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE `users` SET `remember_created_at` = '2015-12-04 02:31:04', `updated_at` = '2015-12-04 02:31:04' WHERE `users`.`id` = 1[0m
+  [1m[35m (47.1ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE `users` SET `last_sign_in_at` = '2015-12-04 02:17:49', `current_sign_in_at` = '2015-12-04 02:31:04', `sign_in_count` = 5, `updated_at` = '2015-12-04 02:31:04' WHERE `users`.`id` = 1
+  [1m[36m (73.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 340ms (ActiveRecord: 122.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-03 21:31:04 -0500
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (NOT (id = 1))  ORDER BY created_at DESC[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `conversations` WHERE (conversations.sender_id =1 OR conversations.recipient_id =1)
+  [1m[36mConversation Load (0.2ms)[0m  [1mSELECT `conversations`.* FROM `conversations` WHERE (conversations.sender_id =1 OR conversations.recipient_id =1)  ORDER BY created_at DESC[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT  `messages`.* FROM `messages` WHERE `messages`.`conversation_id` = 2  ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `messages`.* FROM `messages` WHERE `messages`.`conversation_id` = 2  ORDER BY `messages`.`id` DESC LIMIT 1  [["conversation_id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mMessage Load (0.2ms)[0m  SELECT  `messages`.* FROM `messages` WHERE `messages`.`conversation_id` = 1  ORDER BY `messages`.`id` DESC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `messages`.* FROM `messages` WHERE `messages`.`conversation_id` = 1  ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["conversation_id", 1]]
+  Rendered users/index.html.erb within layouts/application (8.0ms)
+  Rendered layouts/_nav.html.erb (0.3ms)
+Completed 200 OK in 79ms (Views: 76.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-03 21:34:27 -0500
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE `users` SET `last_sign_in_at` = '2015-12-04 02:31:04', `current_sign_in_at` = '2015-12-04 02:34:28', `sign_in_count` = 6, `updated_at` = '2015-12-04 02:34:28' WHERE `users`.`id` = 1
+  [1m[36m (65.1ms)[0m  [1mCOMMIT[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE (NOT (id = 1))  ORDER BY created_at DESC
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `conversations` WHERE (conversations.sender_id =1 OR conversations.recipient_id =1)[0m
+  [1m[35mConversation Load (0.2ms)[0m  SELECT `conversations`.* FROM `conversations` WHERE (conversations.sender_id =1 OR conversations.recipient_id =1)  ORDER BY created_at DESC
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+  [1m[35mMessage Load (0.3ms)[0m  SELECT  `messages`.* FROM `messages` WHERE `messages`.`conversation_id` = 2  ORDER BY `messages`.`id` DESC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `messages`.* FROM `messages` WHERE `messages`.`conversation_id` = 2  ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["conversation_id", 2]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT  `messages`.* FROM `messages` WHERE `messages`.`conversation_id` = 1  ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `messages`.* FROM `messages` WHERE `messages`.`conversation_id` = 1  ORDER BY `messages`.`id` DESC LIMIT 1  [["conversation_id", 1]]
+  Rendered users/index.html.erb within layouts/application (15.1ms)
+  Rendered layouts/_nav.html.erb (0.3ms)
+Completed 200 OK in 80ms (Views: 77.0ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/assets/friendships.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-03 21:34:28 -0500
+
+
+Started GET "/assets/games.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-03 21:34:28 -0500
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-03 21:34:28 -0500
+
+
+Started GET "/assets/profile.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-03 21:34:28 -0500
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-03 21:34:28 -0500
+
+
+Started GET "/assets/site.self-8bcaeb2e383fd5423b2870c74c71d62a35c6e4100047980a41e7d26df947673d.css?body=1" for 127.0.0.1 at 2015-12-03 21:34:28 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-12-03 21:34:28 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-12-03 21:34:28 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-12-03 21:34:28 -0500
+
+
+Started GET "/assets/images/favicon.ico" for 127.0.0.1 at 2015-12-03 21:34:28 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/images/favicon.ico"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  thin (1.6.4) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.4) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.4) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.4) lib/thin/connection.rb:53:in `process'
+  thin (1.6.4) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.8) lib/eventmachine.rb:193:in `run_machine'
+  eventmachine (1.0.8) lib/eventmachine.rb:193:in `run'
+  thin (1.6.4) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.4) lib/thin/server.rb:162:in `start'
+  rack (1.6.4) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.4) lib/rack/server.rb:286:in `start'
+  railties (4.2.4) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.4) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:9:in `require'
+  bin/rails:9:in `<top (required)>'
+  spring (1.5.0) lib/spring/client/rails.rb:28:in `load'
+  spring (1.5.0) lib/spring/client/rails.rb:28:in `call'
+  spring (1.5.0) lib/spring/client/command.rb:7:in `call'
+  spring (1.5.0) lib/spring/client.rb:28:in `run'
+  spring (1.5.0) bin/spring:49:in `<top (required)>'
+  spring (1.5.0) lib/spring/binstub.rb:11:in `load'
+  spring (1.5.0) lib/spring/binstub.rb:11:in `<top (required)>'
+  /home/edmond/.rbenv/versions/2.2.3/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+  /home/edmond/.rbenv/versions/2.2.3/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<main>'
+
+
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.5ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.9ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (41.2ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (12.1ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.1ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (24.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-03 21:34:39 -0500
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE (NOT (id = 1))  ORDER BY created_at DESC
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM `conversations` WHERE (conversations.sender_id =1 OR conversations.recipient_id =1)[0m
+  [1m[35mConversation Load (0.2ms)[0m  SELECT `conversations`.* FROM `conversations` WHERE (conversations.sender_id =1 OR conversations.recipient_id =1)  ORDER BY created_at DESC
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+  [1m[35mMessage Load (0.2ms)[0m  SELECT  `messages`.* FROM `messages` WHERE `messages`.`conversation_id` = 2  ORDER BY `messages`.`id` DESC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `messages`.* FROM `messages` WHERE `messages`.`conversation_id` = 2  ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["conversation_id", 2]]
+  [1m[35mUser Load (0.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT  `messages`.* FROM `messages` WHERE `messages`.`conversation_id` = 1  ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `messages`.* FROM `messages` WHERE `messages`.`conversation_id` = 1  ORDER BY `messages`.`id` DESC LIMIT 1  [["conversation_id", 1]]
+  Rendered users/index.html.erb within layouts/application (8.4ms)
+  Rendered layouts/_nav.html.erb (0.3ms)
+Completed 200 OK in 71ms (Views: 69.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/profile" for 127.0.0.1 at 2015-12-03 21:34:42 -0500
+Processing by ProfileController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered profile/index.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_nav.html.erb (0.3ms)
+Completed 200 OK in 82ms (Views: 81.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-03 21:36:37 -0500
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE `users` SET `last_sign_in_at` = '2015-12-04 02:34:28', `current_sign_in_at` = '2015-12-04 02:36:37', `sign_in_count` = 7, `updated_at` = '2015-12-04 02:36:37' WHERE `users`.`id` = 1
+  [1m[36m (44.6ms)[0m  [1mCOMMIT[0m
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` WHERE (NOT (id = 1))  ORDER BY created_at DESC
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM `conversations` WHERE (conversations.sender_id =1 OR conversations.recipient_id =1)[0m
+  [1m[35mConversation Load (0.2ms)[0m  SELECT `conversations`.* FROM `conversations` WHERE (conversations.sender_id =1 OR conversations.recipient_id =1)  ORDER BY created_at DESC
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+  [1m[35mMessage Load (0.2ms)[0m  SELECT  `messages`.* FROM `messages` WHERE `messages`.`conversation_id` = 2  ORDER BY `messages`.`id` DESC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `messages`.* FROM `messages` WHERE `messages`.`conversation_id` = 2  ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["conversation_id", 2]]
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT  `messages`.* FROM `messages` WHERE `messages`.`conversation_id` = 1  ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `messages`.* FROM `messages` WHERE `messages`.`conversation_id` = 1  ORDER BY `messages`.`id` DESC LIMIT 1  [["conversation_id", 1]]
+  Rendered users/index.html.erb within layouts/application (8.4ms)
+  Rendered layouts/_nav.html.erb (0.4ms)
+Completed 200 OK in 75ms (Views: 72.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/friendships.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-03 21:36:37 -0500
+
+
+Started GET "/assets/games.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-03 21:36:37 -0500
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-03 21:36:37 -0500
+
+
+Started GET "/assets/profile.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-03 21:36:37 -0500
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-03 21:36:37 -0500
+
+
+Started GET "/assets/site.self-8bcaeb2e383fd5423b2870c74c71d62a35c6e4100047980a41e7d26df947673d.css?body=1" for 127.0.0.1 at 2015-12-03 21:36:37 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-12-03 21:36:37 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-12-03 21:36:37 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-12-03 21:36:37 -0500
+
+
+Started GET "/assets/images/favicon.ico" for 127.0.0.1 at 2015-12-03 21:36:37 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/images/favicon.ico"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  thin (1.6.4) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.4) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.4) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.4) lib/thin/connection.rb:53:in `process'
+  thin (1.6.4) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.8) lib/eventmachine.rb:193:in `run_machine'
+  eventmachine (1.0.8) lib/eventmachine.rb:193:in `run'
+  thin (1.6.4) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.4) lib/thin/server.rb:162:in `start'
+  rack (1.6.4) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.4) lib/rack/server.rb:286:in `start'
+  railties (4.2.4) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.4) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:9:in `require'
+  bin/rails:9:in `<top (required)>'
+  spring (1.5.0) lib/spring/client/rails.rb:28:in `load'
+  spring (1.5.0) lib/spring/client/rails.rb:28:in `call'
+  spring (1.5.0) lib/spring/client/command.rb:7:in `call'
+  spring (1.5.0) lib/spring/client.rb:28:in `run'
+  spring (1.5.0) bin/spring:49:in `<top (required)>'
+  spring (1.5.0) lib/spring/binstub.rb:11:in `load'
+  spring (1.5.0) lib/spring/binstub.rb:11:in `<top (required)>'
+  /home/edmond/.rbenv/versions/2.2.3/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+  /home/edmond/.rbenv/versions/2.2.3/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<main>'
+
+
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.7ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (36.6ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (11.8ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (24.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-03 21:36:55 -0500
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE `users` SET `last_sign_in_at` = '2015-12-04 02:36:37', `current_sign_in_at` = '2015-12-04 02:36:55', `sign_in_count` = 8, `updated_at` = '2015-12-04 02:36:55' WHERE `users`.`id` = 1[0m
+  [1m[35m (44.9ms)[0m  COMMIT
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (NOT (id = 1))  ORDER BY created_at DESC[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `conversations` WHERE (conversations.sender_id =1 OR conversations.recipient_id =1)
+  [1m[36mConversation Load (0.1ms)[0m  [1mSELECT `conversations`.* FROM `conversations` WHERE (conversations.sender_id =1 OR conversations.recipient_id =1)  ORDER BY created_at DESC[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  [1m[36mMessage Load (0.1ms)[0m  [1mSELECT  `messages`.* FROM `messages` WHERE `messages`.`conversation_id` = 2  ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `messages`.* FROM `messages` WHERE `messages`.`conversation_id` = 2  ORDER BY `messages`.`id` DESC LIMIT 1  [["conversation_id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mMessage Load (0.2ms)[0m  SELECT  `messages`.* FROM `messages` WHERE `messages`.`conversation_id` = 1  ORDER BY `messages`.`id` DESC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `messages`.* FROM `messages` WHERE `messages`.`conversation_id` = 1  ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["conversation_id", 1]]
+  Rendered users/index.html.erb within layouts/application (9.1ms)
+  Rendered layouts/_nav.html.erb (0.3ms)
+Completed 200 OK in 78ms (Views: 74.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/assets/friendships.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-03 21:36:55 -0500
+
+
+Started GET "/assets/games.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-03 21:36:55 -0500
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-03 21:36:55 -0500
+
+
+Started GET "/assets/profile.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-03 21:36:55 -0500
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-03 21:36:55 -0500
+
+
+Started GET "/assets/site.self-8bcaeb2e383fd5423b2870c74c71d62a35c6e4100047980a41e7d26df947673d.css?body=1" for 127.0.0.1 at 2015-12-03 21:36:55 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-12-03 21:36:55 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-12-03 21:36:55 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-12-03 21:36:55 -0500
+
+
+Started GET "/assets/images/favicon.ico" for 127.0.0.1 at 2015-12-03 21:36:55 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/images/favicon.ico"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  thin (1.6.4) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.4) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.4) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.4) lib/thin/connection.rb:53:in `process'
+  thin (1.6.4) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.8) lib/eventmachine.rb:193:in `run_machine'
+  eventmachine (1.0.8) lib/eventmachine.rb:193:in `run'
+  thin (1.6.4) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.4) lib/thin/server.rb:162:in `start'
+  rack (1.6.4) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.4) lib/rack/server.rb:286:in `start'
+  railties (4.2.4) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.4) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:9:in `require'
+  bin/rails:9:in `<top (required)>'
+  spring (1.5.0) lib/spring/client/rails.rb:28:in `load'
+  spring (1.5.0) lib/spring/client/rails.rb:28:in `call'
+  spring (1.5.0) lib/spring/client/command.rb:7:in `call'
+  spring (1.5.0) lib/spring/client.rb:28:in `run'
+  spring (1.5.0) bin/spring:49:in `<top (required)>'
+  spring (1.5.0) lib/spring/binstub.rb:11:in `load'
+  spring (1.5.0) lib/spring/binstub.rb:11:in `<top (required)>'
+  /home/edmond/.rbenv/versions/2.2.3/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+  /home/edmond/.rbenv/versions/2.2.3/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<main>'
+
+
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.7ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.9ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (35.3ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (12.0ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.2ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (23.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-03 21:38:51 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.8ms)
+  Rendered layouts/_nav.html.erb (0.2ms)
+Completed 200 OK in 69ms (Views: 68.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/chat.self-b8fe4cc1ac78b9e912c00561c9b41f2a9355511c103b8d71088bf63da0e53332.css?body=1" for 127.0.0.1 at 2015-12-03 21:38:52 -0500
+
+
+Started GET "/assets/conversations.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-03 21:38:52 -0500
+
+
+Started GET "/assets/friendships.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-03 21:38:52 -0500
+
+
+Started GET "/assets/games.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-03 21:38:52 -0500
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-03 21:38:52 -0500
+
+
+Started GET "/assets/messages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-03 21:38:52 -0500
+
+
+Started GET "/assets/profile.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-03 21:38:52 -0500
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-03 21:38:52 -0500
+
+
+Started GET "/assets/bootstrap.self-598365399e6ae8f5a456a189663bac8ef9b8996ace38626328403f280fd63400.css?body=1" for 127.0.0.1 at 2015-12-03 21:38:52 -0500
+
+
+Started GET "/assets/site.self-8bcaeb2e383fd5423b2870c74c71d62a35c6e4100047980a41e7d26df947673d.css?body=1" for 127.0.0.1 at 2015-12-03 21:38:52 -0500
+
+
+Started GET "/assets/users.self-c07fc51bb32b3ac63bd5c93b44920d46f42bd91b93b4c9d4343299d589e06616.css?body=1" for 127.0.0.1 at 2015-12-03 21:38:52 -0500
+
+
+Started GET "/assets/application.self-859c7279f44f73547b7c91e452f55ad7ae48b3acea26b6f47c0452ef736e3e59.css?body=1" for 127.0.0.1 at 2015-12-03 21:38:52 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-12-03 21:38:52 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-12-03 21:38:52 -0500
+
+
+Started GET "/assets/bootstrap.min.self-d475868eedd65d9ab19f96e8574a2c8ce91ba7d64b8bbfa47cd55591a956ed67.js?body=1" for 127.0.0.1 at 2015-12-03 21:38:52 -0500
+
+
+Started GET "/assets/private_pub.self-b110feb9d6b39a3b0dc59510984a4ff9ad14a15e427afbd7474c4531dbb660a6.js?body=1" for 127.0.0.1 at 2015-12-03 21:38:52 -0500
+
+
+Started GET "/assets/chat.self-08877a41716a0d25591ad867be1bdf9b5ccb29636c7286436ec1fcbae51ba483.js?body=1" for 127.0.0.1 at 2015-12-03 21:38:52 -0500
+
+
+Started GET "/assets/user/users.self-ff71eda3360ca2ed043e12163273a7b733ca44644610470d287c39db69a4c719.js?body=1" for 127.0.0.1 at 2015-12-03 21:38:52 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-12-03 21:38:52 -0500
+
+
+Started GET "/assets/application.self-794e63f8d3c269f2318eb4c0ef9caffaf1b0a47de8a46f1b2291ae9e9a431b67.js?body=1" for 127.0.0.1 at 2015-12-03 21:38:52 -0500
+
+
+Started GET "/assets/images/favicon.ico" for 127.0.0.1 at 2015-12-03 21:38:52 -0500
+
+ActionController::RoutingError (No route matches [GET] "/assets/images/favicon.ico"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.2.1) lib/web_console/middleware.rb:39:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  thin (1.6.4) lib/thin/connection.rb:86:in `block in pre_process'
+  thin (1.6.4) lib/thin/connection.rb:84:in `catch'
+  thin (1.6.4) lib/thin/connection.rb:84:in `pre_process'
+  thin (1.6.4) lib/thin/connection.rb:53:in `process'
+  thin (1.6.4) lib/thin/connection.rb:39:in `receive_data'
+  eventmachine (1.0.8) lib/eventmachine.rb:193:in `run_machine'
+  eventmachine (1.0.8) lib/eventmachine.rb:193:in `run'
+  thin (1.6.4) lib/thin/backends/base.rb:73:in `start'
+  thin (1.6.4) lib/thin/server.rb:162:in `start'
+  rack (1.6.4) lib/rack/handler/thin.rb:19:in `run'
+  rack (1.6.4) lib/rack/server.rb:286:in `start'
+  railties (4.2.4) lib/rails/commands/server.rb:80:in `start'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:80:in `block in server'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:75:in `tap'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:75:in `server'
+  railties (4.2.4) lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+  railties (4.2.4) lib/rails/commands.rb:17:in `<top (required)>'
+  bin/rails:9:in `require'
+  bin/rails:9:in `<top (required)>'
+  spring (1.5.0) lib/spring/client/rails.rb:28:in `load'
+  spring (1.5.0) lib/spring/client/rails.rb:28:in `call'
+  spring (1.5.0) lib/spring/client/command.rb:7:in `call'
+  spring (1.5.0) lib/spring/client.rb:28:in `run'
+  spring (1.5.0) bin/spring:49:in `<top (required)>'
+  spring (1.5.0) lib/spring/binstub.rb:11:in `load'
+  spring (1.5.0) lib/spring/binstub.rb:11:in `<top (required)>'
+  /home/edmond/.rbenv/versions/2.2.3/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+  /home/edmond/.rbenv/versions/2.2.3/lib/ruby/2.2.0/rubygems/core_ext/kernel_require.rb:54:in `require'
+  bin/spring:13:in `<top (required)>'
+  bin/rails:3:in `load'
+  bin/rails:3:in `<main>'
+
+
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.1ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (37.2ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.2ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (12.0ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /home/edmond/.rbenv/versions/2.2.3/lib/ruby/gems/2.2.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (24.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-03 21:39:39 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.0ms)
+  Rendered layouts/_nav.html.erb (0.2ms)
+Completed 200 OK in 74ms (Views: 72.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/chat.self-b8fe4cc1ac78b9e912c00561c9b41f2a9355511c103b8d71088bf63da0e53332.css?body=1" for 127.0.0.1 at 2015-12-03 21:39:39 -0500
+
+
+Started GET "/assets/conversations.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-03 21:39:39 -0500
+
+
+Started GET "/assets/games.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-03 21:39:39 -0500
+
+
+Started GET "/assets/friendships.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-03 21:39:39 -0500
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-03 21:39:39 -0500
+
+
+Started GET "/assets/messages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-03 21:39:39 -0500
+
+
+Started GET "/assets/profile.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-03 21:39:39 -0500
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-03 21:39:39 -0500
+
+
+Started GET "/assets/site.self-8bcaeb2e383fd5423b2870c74c71d62a35c6e4100047980a41e7d26df947673d.css?body=1" for 127.0.0.1 at 2015-12-03 21:39:39 -0500
+
+
+Started GET "/assets/users.self-c07fc51bb32b3ac63bd5c93b44920d46f42bd91b93b4c9d4343299d589e06616.css?body=1" for 127.0.0.1 at 2015-12-03 21:39:39 -0500
+
+
+Started GET "/assets/bootstrap.self-598365399e6ae8f5a456a189663bac8ef9b8996ace38626328403f280fd63400.css?body=1" for 127.0.0.1 at 2015-12-03 21:39:39 -0500
+
+
+Started GET "/assets/application.self-859c7279f44f73547b7c91e452f55ad7ae48b3acea26b6f47c0452ef736e3e59.css?body=1" for 127.0.0.1 at 2015-12-03 21:39:39 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-12-03 21:39:39 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-12-03 21:39:39 -0500
+
+
+Started GET "/assets/bootstrap.min.self-d475868eedd65d9ab19f96e8574a2c8ce91ba7d64b8bbfa47cd55591a956ed67.js?body=1" for 127.0.0.1 at 2015-12-03 21:39:39 -0500
+
+
+Started GET "/assets/private_pub.self-b110feb9d6b39a3b0dc59510984a4ff9ad14a15e427afbd7474c4531dbb660a6.js?body=1" for 127.0.0.1 at 2015-12-03 21:39:39 -0500
+
+
+Started GET "/assets/chat.self-08877a41716a0d25591ad867be1bdf9b5ccb29636c7286436ec1fcbae51ba483.js?body=1" for 127.0.0.1 at 2015-12-03 21:39:39 -0500
+
+
+Started GET "/assets/user/users.self-ff71eda3360ca2ed043e12163273a7b733ca44644610470d287c39db69a4c719.js?body=1" for 127.0.0.1 at 2015-12-03 21:39:39 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-12-03 21:39:39 -0500
+
+
+Started GET "/assets/application.self-794e63f8d3c269f2318eb4c0ef9caffaf1b0a47de8a46f1b2291ae9e9a431b67.js?body=1" for 127.0.0.1 at 2015-12-03 21:39:39 -0500
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2015-12-03 21:39:47 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (0.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.1ms)
+  Rendered layouts/_nav.html.erb (0.3ms)
+Completed 200 OK in 68ms (Views: 66.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2015-12-03 21:39:53 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3RhrNIqye717bDpvtRT8O/Jyh5ZRr5bAljoRJIcWN1956wN3KXduoLa+AYMV8Eh74tYdhhWhDFcGwy04v+7OeQ==", "user"=>{"email"=>"edma_wu@yahoo.com", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Sign in"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`email` = 'edma_wu@yahoo.com'  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE `users` SET `last_sign_in_at` = '2015-12-04 02:36:55', `current_sign_in_at` = '2015-12-04 02:39:54', `sign_in_count` = 9, `updated_at` = '2015-12-04 02:39:54' WHERE `users`.`id` = 1
+  [1m[36m (72.8ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 150ms (ActiveRecord: 73.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-03 21:39:54 -0500
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (NOT (id = 1))  ORDER BY created_at DESC[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `conversations` WHERE (conversations.sender_id =1 OR conversations.recipient_id =1)
+  [1m[36mConversation Load (0.2ms)[0m  [1mSELECT `conversations`.* FROM `conversations` WHERE (conversations.sender_id =1 OR conversations.recipient_id =1)  ORDER BY created_at DESC[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT  `messages`.* FROM `messages` WHERE `messages`.`conversation_id` = 2  ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `messages`.* FROM `messages` WHERE `messages`.`conversation_id` = 2  ORDER BY `messages`.`id` DESC LIMIT 1  [["conversation_id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mMessage Load (0.1ms)[0m  SELECT  `messages`.* FROM `messages` WHERE `messages`.`conversation_id` = 1  ORDER BY `messages`.`id` DESC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `messages`.* FROM `messages` WHERE `messages`.`conversation_id` = 1  ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["conversation_id", 1]]
+  Rendered users/index.html.erb within layouts/application (7.8ms)
+  Rendered layouts/_nav.html.erb (0.3ms)
+Completed 200 OK in 73ms (Views: 69.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-12-03 21:40:11 -0500
+  [1m[35mUser Load (0.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (NOT (id = 1))  ORDER BY created_at DESC[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM `conversations` WHERE (conversations.sender_id =1 OR conversations.recipient_id =1)
+  [1m[36mConversation Load (0.3ms)[0m  [1mSELECT `conversations`.* FROM `conversations` WHERE (conversations.sender_id =1 OR conversations.recipient_id =1)  ORDER BY created_at DESC[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT  `messages`.* FROM `messages` WHERE `messages`.`conversation_id` = 2  ORDER BY `messages`.`id` DESC LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `messages`.* FROM `messages` WHERE `messages`.`conversation_id` = 2  ORDER BY `messages`.`id` DESC LIMIT 1  [["conversation_id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mMessage Load (0.2ms)[0m  SELECT  `messages`.* FROM `messages` WHERE `messages`.`conversation_id` = 1  ORDER BY `messages`.`id` DESC LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `messages`.* FROM `messages` WHERE `messages`.`conversation_id` = 1  ORDER BY `messages`.`id` DESC LIMIT 1[0m  [["conversation_id", 1]]
+  Rendered users/index.html.erb within layouts/application (6.6ms)
+  Rendered layouts/_nav.html.erb (0.3ms)
+Completed 200 OK in 77ms (Views: 74.5ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/chat.self-b8fe4cc1ac78b9e912c00561c9b41f2a9355511c103b8d71088bf63da0e53332.css?body=1" for 127.0.0.1 at 2015-12-03 21:40:11 -0500
+
+
+Started GET "/assets/conversations.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-03 21:40:11 -0500
+
+
+Started GET "/assets/friendships.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-03 21:40:11 -0500
+
+
+Started GET "/assets/games.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-03 21:40:11 -0500
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-03 21:40:11 -0500
+
+
+Started GET "/assets/messages.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-03 21:40:11 -0500
+
+
+Started GET "/assets/profile.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-03 21:40:11 -0500
+
+
+Started GET "/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2015-12-03 21:40:11 -0500
+
+
+Started GET "/assets/site.self-8bcaeb2e383fd5423b2870c74c71d62a35c6e4100047980a41e7d26df947673d.css?body=1" for 127.0.0.1 at 2015-12-03 21:40:11 -0500
+
+
+Started GET "/assets/users.self-c07fc51bb32b3ac63bd5c93b44920d46f42bd91b93b4c9d4343299d589e06616.css?body=1" for 127.0.0.1 at 2015-12-03 21:40:11 -0500
+
+
+Started GET "/assets/bootstrap.self-598365399e6ae8f5a456a189663bac8ef9b8996ace38626328403f280fd63400.css?body=1" for 127.0.0.1 at 2015-12-03 21:40:11 -0500
+
+
+Started GET "/assets/application.self-859c7279f44f73547b7c91e452f55ad7ae48b3acea26b6f47c0452ef736e3e59.css?body=1" for 127.0.0.1 at 2015-12-03 21:40:11 -0500
+
+
+Started GET "/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1" for 127.0.0.1 at 2015-12-03 21:40:11 -0500
+
+
+Started GET "/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1" for 127.0.0.1 at 2015-12-03 21:40:11 -0500
+
+
+Started GET "/assets/bootstrap.min.self-d475868eedd65d9ab19f96e8574a2c8ce91ba7d64b8bbfa47cd55591a956ed67.js?body=1" for 127.0.0.1 at 2015-12-03 21:40:11 -0500
+
+
+Started GET "/assets/private_pub.self-b110feb9d6b39a3b0dc59510984a4ff9ad14a15e427afbd7474c4531dbb660a6.js?body=1" for 127.0.0.1 at 2015-12-03 21:40:11 -0500
+
+
+Started GET "/assets/chat.self-08877a41716a0d25591ad867be1bdf9b5ccb29636c7286436ec1fcbae51ba483.js?body=1" for 127.0.0.1 at 2015-12-03 21:40:11 -0500
+
+
+Started GET "/assets/user/users.self-ff71eda3360ca2ed043e12163273a7b733ca44644610470d287c39db69a4c719.js?body=1" for 127.0.0.1 at 2015-12-03 21:40:11 -0500
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for 127.0.0.1 at 2015-12-03 21:40:11 -0500
+
+
+Started GET "/assets/application.self-794e63f8d3c269f2318eb4c0ef9caffaf1b0a47de8a46f1b2291ae9e9a431b67.js?body=1" for 127.0.0.1 at 2015-12-03 21:40:11 -0500
