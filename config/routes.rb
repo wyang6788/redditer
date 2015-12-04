@@ -37,7 +37,6 @@ Rails.application.routes.draw do
     get 'profile' => 'profile#index'
     get 'about' => 'about#index'
 
-    get 'subreddits' => 'subreddits#index'
     get 'subreddits/new' => 'subreddits#new'
     post 'subreddits' => 'subreddits#create'
 
