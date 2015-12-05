@@ -1,10 +1,10 @@
 development:
-  server: "http://localhost:9292/faye"
+  server: "http://redditer.elasticbeanstalk.com:9292/faye"
   secret_token: "secret"
 test:
-  server: "http://localhost:9292/faye"
+  server: "http://redditer.elasticbeanstalk.com:9292/faye"
   secret_token: "secret"
 production:
-  server: "http://localhost:9292/faye"
+  server: "http://redditer.elasticbeanstalk.com:9292/faye"
   secret_token: "3c1dc4f694a00a0d5859b45f6b458c299d64c268274d16692c638f3b8d2a7966"
   signature_expiration: 3600 # one hour
