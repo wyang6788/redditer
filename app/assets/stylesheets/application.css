@@ -27,8 +27,14 @@ h1, h2, h3 {
 	font-weight: bold;
 }
 
+legend {
+    font-size: 24px;
+    font-weight: bold;
+}
+
 .navbar {
 	background-color: #cee3f8;
 	border-color: #cccccc;
 }
+
 

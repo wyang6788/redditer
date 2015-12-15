@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
     default_url_options :host => "redditer.elasticbeanstalk.com"
-  
+ 
     devise_for :users
     
     authenticated :user do
@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
     unauthenticated :user do
       devise_scope :user do
-        get "/" => "devise/sessions#new"
+        get "/" => "devise/sessions#home"
       end
     end
 
